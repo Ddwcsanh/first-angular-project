@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true" />
+    <div class="signup">
+      <form ngNativeValidate (ngSubmit)="signup()">
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input
+          type="text"
+          name="txt"
+          placeholder="Name"
+          required=""
+          [(ngModel)]="signupObj.name"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required=""
+          autocomplete="off"
+          [(ngModel)]="signupObj.email"
+        />
+        <input
+          type="password"
+          name="pswd"
+          placeholder="Password"
+          required=""
+          [(ngModel)]="signupObj.password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+        />
+        <input
+          type="password"
+          name="pswd"
+          placeholder="Confirm password"
+          required=""
+          [(ngModel)]="signupObj.confirmPassword"
+        />
+        <button>Sign up</button>
+      </form>
+    </div>
+
+    <div class="login">
+      <form ngNativeValidate (ngSubmit)="login()">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required=""
+          autocomplete="off"
+          [(ngModel)]="loginObj.email"
+        />
+        <input
+          type="password"
+          name="pswd"
+          placeholder="Password"
+          required=""
+          [(ngModel)]="loginObj.password"
+        />
+        <button>Login</button>
+      </form>
+    </div>
+  </div>
+</div>
